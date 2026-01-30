@@ -41,18 +41,28 @@ login_date = '2022-05-08' OR login_date = '2022-05-09': Filtra los resultados qu
 <br />Recuperar intentos de inicio de sesión fuera de México
 <br/>
 <img src=https://i.imgur.com/anx7ylZ.png height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />SELECT *: Recupera toda las columnas de  log_in_attempts table  de los intentos de inicio de sesion no originados en Mexico
+ NOT:  Garantiza la condition es invertida , es decir excluira los registros que coinciden con el patron 'MEX%'.
+LIKE 'MEX%': Iguala cualquier valor en la columna country que empiece con 'MEX' (cubriendo ambos 'MEX' and 'MEXICO').
+
+<br/>Recuperar empleados en finanzas o ventas
+<img src=https://i.imgur.com/y15fAid.png height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ <br/>Explicación:
+<br />SELECT *:Recupera todas las columnas de la tabla employees para los registros que coinciden con cualquiera de las dos condiciones.
+department = 'Finance': Filtra los empleados que pertenecen al departamento de Finance.
+OR: Especifica que se debe cumplir una de las dos condiciones, es decir, pertenecer a cualquiera de los dos departamentos.
+department = 'Sales': Filtra los empleados que pertenecen al departamento de Sales.
+ 
+  <br/>
+
+  <br/> Recuperar todos los empleados no esten en it 
+
+<img src=https://i.imgur.com/4xkeHzJ.png height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />Explicación
+<br />SELECT *: Recupera todas las columnas de la tabla employees para los registros que cumplen con la condición de no estar en el departamento de Information Technology.
+NOT department = 'Information Technology': Esta condición excluye a los empleados que pertenecen al departamento de Information Technology.
+  <br/>
+
 </p>
 
 <!--
